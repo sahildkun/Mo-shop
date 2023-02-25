@@ -27,7 +27,7 @@ const ProductDetail = (props) => {
    <Layout>
      <div className='grid grid-cols-2 m-10'>
        <div>
-      <Image src={product.image} className='rounded-lg shadow-2xl' height={400} width={400}/>
+      <Image src={product.image} className='rounded-lg shadow-2xl' height={400} width={400} alt='pls deploy'/>
       </div>
       <div>
        <h1 className='scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl'>{product.name.toUpperCase()}</h1>
