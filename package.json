@@ -56,7 +56,6 @@
     "tailwindcss-animate": "^1.0.5"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "^17.0.12",
