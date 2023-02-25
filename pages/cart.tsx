@@ -8,23 +8,23 @@ import { incrementQuantity,decrementQuantity ,removeItem} from '@/features/Cart/
 
 const cart = () => {
 
-  // const cart = useSelector((state) => state.cart.cart);
-  // console.log(cart)
-  // const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
+  console.log(cart)
+  const dispatch = useDispatch();
 
-  //  const getTotal = () => {
-  //   let totalQuantity = 0
-  //   let totalPrice = 0
-  //   cart.forEach(item => {
-  //     totalQuantity += item.quantity
-  //     totalPrice += item.price * item.quantity
-  //   })
-  //   return {totalPrice, totalQuantity}
-  // }
+   const getTotal = () => {
+    let totalQuantity = 0
+    let totalPrice = 0
+    cart.forEach(item => {
+      totalQuantity += item.quantity
+      totalPrice += item.price * item.quantity
+    })
+    return {totalPrice, totalQuantity}
+  }
   return (
 
    <Layout>
-   {/* {
+    {
       cart.length > 0 ? cart.map((cartProduct) => {
 
 
@@ -41,7 +41,7 @@ const cart = () => {
          <h1>{cartProduct.quantity}</h1>
          <button className='font-bold text-white text-xl' onClick={() => dispatch(incrementQuantity(cartProduct.id))}>+</button>
          </div>
-
+         {/* <h1>kjnkl<h1> */}
         <div>
          <button
           className='cartItem__removeButton'
@@ -59,15 +59,14 @@ const cart = () => {
       }) : (<>
    <h2>Your cart is empty :)</h2>
       </>)
-    }*/}
+    }
 
-
-    {/* <div>
+    <div>
     <p className="total__p">
   total ({getTotal().totalQuantity} items)
   : <strong>${getTotal().totalPrice}</strong>
 </p>
-    </div> */}
+    </div>
    </Layout>
   )
 }
