@@ -18,7 +18,7 @@ const ProductDetail = (props) => {
   const router = useRouter();
 
   const productId = router.query.productId;
-
+ 
   if(isLoading || !data){
 
     return(
