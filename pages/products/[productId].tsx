@@ -11,25 +11,17 @@ const ProductDetail = (props) => {
 
   //  const products = useContext(CartContext);
   //  const productArray = Object.keys(products);
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
-  const { data, error, isLoading } = useSWR('https://api.pujakaitem.com/api/products',fetcher);
-   console.log(data)
-  // const {products} = props;
+  // const fetcher = (...args) => fetch(...args).then(res => res.json());
+  // const { data, error, isLoading } = useSWR('https://api.pujakaitem.com/api/products',fetcher);
+  //  console.log(data)
+  const {products} = props;
   const router = useRouter();
 
   const productId = router.query.productId;
- 
-  if(isLoading || !data){
 
-    return(
-    <>
-    <Layout>
-    <h1>Loading...</h1>
-    </Layout>
-    </>)
-  }
 
-  const product = data.find((product) => product.id === productId);
+
+  const product = products.find((product) => product.id === productId);
 
 
 
@@ -56,13 +48,13 @@ const ProductDetail = (props) => {
 
 
 
-// export async function getServerSideProps(context) {
-//   const products = await getAllProducts();
+export async function getServerSideProps(context) {
+  const products = await getAllProducts();
 
-//   return {
-//       props: {
-//       products: products,
-//     }
-//   }
-// }
+  return {
+      props: {
+      products: products,
+    }
+  }
+}
 export default ProductDetail;
